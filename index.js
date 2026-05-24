@@ -17,8 +17,12 @@ client.on('ready', () => {
 
 client.on('voiceStateUpdate', async (oldState, newState) => {
 
+    console.log("EVENT DETECTE");
+
     // rejoint un vocal
     if (!oldState.channel && newState.channel) {
+
+        console.log("JOIN DETECTE");
 
         try {
 
@@ -26,6 +30,8 @@ client.on('voiceStateUpdate', async (oldState, newState) => {
                 content:
                 `🔊 ${newState.member.user.username} a rejoint ${newState.channel.name}`
             });
+
+            console.log("MESSAGE ENVOYE");
 
         } catch (err) {
             console.error(err);
