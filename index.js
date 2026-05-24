@@ -11,6 +11,8 @@ const client = new Client({
 const TOKEN = process.env.TOKEN;
 const WEBHOOK_URL = process.env.WEBHOOK_URL;
 
+const lastPing = {};
+
 client.on('ready', () => {
     console.log(`Connecté en tant que ${client.user.tag}`);
 });
